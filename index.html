@@ -17,13 +17,12 @@
       --muted:#8B7568;
       --title:#9D6A50;
       --accent:#C98663;
-      --accent-soft:#F3DED0;
       --btn:#B97855;
       --btn-hover:#A76643;
-      --shadow:0 14px 32px rgba(130,92,67,.08);
-      --radius:24px;
-      --max:1100px;
-      --fs-body:16px;
+      --shadow:0 10px 24px rgba(130,92,67,.06);
+      --radius:22px;
+      --max:1080px;
+      --fs-body:15px;
     }
 
     *{ box-sizing:border-box; }
@@ -50,43 +49,43 @@
     }
 
     .hero{
-      padding:42px 0 22px;
+      padding:38px 0 18px;
     }
 
     .hero-card{
       background:var(--card);
-      border:1px solid rgba(201,134,99,.18);
-      border-radius:32px;
+      border:1px solid rgba(201,134,99,.16);
+      border-radius:28px;
       box-shadow:var(--shadow);
-      padding:34px 26px 28px;
+      padding:30px 24px 24px;
     }
 
     .badge{
       display:inline-flex;
       align-items:center;
-      padding:8px 14px;
+      padding:7px 13px;
       background:#FFF4EC;
       border:1px solid #F0D5C3;
       border-radius:999px;
-      font-size:14px;
+      font-size:13px;
       font-weight:700;
       color:var(--title);
-      margin-bottom:16px;
+      margin-bottom:14px;
     }
 
     h1{
-      margin:0 0 14px;
+      margin:0 0 12px;
       color:var(--title);
-      font-size:clamp(26px, 4.2vw, 38px);
+      font-size:clamp(24px, 4vw, 34px);
       line-height:1.45;
-      letter-spacing:.2px;
+      letter-spacing:.1px;
       font-weight:800;
     }
 
     h2{
-      margin:0 0 16px;
+      margin:0 0 14px;
       color:var(--title);
-      font-size:22px;
+      font-size:20px;
       line-height:1.45;
       font-weight:800;
     }
@@ -94,7 +93,7 @@
     h3{
       margin:0 0 8px;
       color:var(--title);
-      font-size:20px;
+      font-size:17px;
       line-height:1.5;
       font-weight:800;
     }
@@ -107,7 +106,7 @@
     }
 
     .hero-sub{
-      font-size:var(--fs-body);
+      font-size:15px;
       font-weight:700;
       color:var(--text);
       margin-bottom:10px;
@@ -116,24 +115,24 @@
 
     .hero-desc{
       color:var(--muted);
-      max-width:760px;
+      max-width:720px;
     }
 
     .hero-actions{
-      margin-top:22px;
+      margin-top:18px;
       display:flex;
       flex-wrap:wrap;
-      gap:12px;
+      gap:10px;
     }
 
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-height:50px;
-      padding:0 22px;
+      min-height:46px;
+      padding:0 20px;
       border-radius:999px;
-      font-size:16px;
+      font-size:15px;
       font-weight:800;
       transition:.2s ease;
       border:1px solid transparent;
@@ -143,7 +142,7 @@
     .btn-primary{
       background:var(--btn);
       color:#fff;
-      box-shadow:0 8px 18px rgba(185,120,85,.14);
+      box-shadow:0 6px 14px rgba(185,120,85,.12);
     }
 
     .btn-primary:hover{
@@ -162,17 +161,17 @@
     }
 
     .intro-block{
-      margin-top:24px;
-      padding:16px 18px;
+      margin-top:20px;
+      padding:14px 16px;
       background:#FFF8F4;
       border:1px solid #EFD9CB;
-      border-radius:18px;
+      border-radius:16px;
     }
 
     .intro-title{
-      margin:0 0 10px;
+      margin:0 0 8px;
       color:var(--title);
-      font-size:16px;
+      font-size:15px;
       line-height:1.6;
       font-weight:800;
     }
@@ -182,14 +181,14 @@
       padding:0;
       list-style:none;
       display:grid;
-      gap:10px;
+      gap:8px;
     }
 
     .intro-list li{
       position:relative;
-      padding-left:18px;
+      padding-left:16px;
       color:var(--muted);
-      font-size:16px;
+      font-size:15px;
       font-weight:700;
       line-height:1.7;
     }
@@ -200,29 +199,29 @@
       left:0;
       top:0;
       color:var(--accent);
-      font-size:18px;
-      line-height:1.6;
+      font-size:17px;
+      line-height:1.5;
     }
 
     section{
-      padding:16px 0 0;
+      padding:14px 0 0;
     }
 
     .section-title{
       display:flex;
       align-items:center;
       gap:10px;
-      margin:0 0 18px;
+      margin:0 0 16px;
       color:var(--title);
-      font-size:22px;
+      font-size:20px;
       font-weight:800;
       line-height:1.5;
     }
 
     .section-title::before{
       content:"";
-      width:10px;
-      height:10px;
+      width:9px;
+      height:9px;
       border-radius:50%;
       background:var(--accent);
       flex:0 0 auto;
@@ -231,7 +230,7 @@
     .grid-2{
       display:grid;
       grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:18px;
+      gap:16px;
     }
 
     .card{
@@ -239,7 +238,7 @@
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:24px 20px;
+      padding:20px 18px;
     }
 
     .plan{
@@ -248,53 +247,54 @@
     }
 
     .plan.recommend{
-      border:1.5px solid rgba(185,120,85,.35);
+      border:1.5px solid rgba(185,120,85,.32);
     }
 
     .tag{
       position:absolute;
-      top:18px;
-      right:18px;
+      top:16px;
+      right:16px;
       background:#FFF2E8;
       color:var(--title);
       border:1px solid #F0D4C1;
-      padding:7px 12px;
+      padding:6px 10px;
       border-radius:999px;
-      font-size:13px;
+      font-size:12px;
       font-weight:800;
       line-height:1;
     }
 
     .plan-name{
       margin:0 0 8px;
-      padding-right:84px;
+      padding-right:76px;
       color:var(--title);
-      font-size:22px;
+      font-size:20px;
       font-weight:800;
-      line-height:1.6;
+      line-height:1.55;
     }
 
     .plan-desc{
       color:var(--muted);
-      margin-bottom:14px;
+      margin-bottom:12px;
+      font-size:15px;
     }
 
     .price{
       display:flex;
       align-items:flex-end;
       gap:8px;
-      margin-bottom:16px;
+      margin-bottom:14px;
     }
 
     .price strong{
-      font-size:34px;
+      font-size:30px;
       line-height:1;
       color:var(--accent);
       font-weight:800;
     }
 
     .price span{
-      font-size:14px;
+      font-size:13px;
       color:var(--muted);
       font-weight:700;
       padding-bottom:4px;
@@ -306,16 +306,16 @@
       padding:0;
       margin:0;
       display:grid;
-      gap:10px;
+      gap:8px;
     }
 
     .feature-list li,
     .list li{
       display:flex;
       align-items:flex-start;
-      gap:10px;
-      font-size:var(--fs-body);
-      line-height:1.8;
+      gap:9px;
+      font-size:15px;
+      line-height:1.75;
       font-weight:600;
       color:var(--text);
     }
@@ -330,69 +330,83 @@
     }
 
     .plan-note{
-      margin-top:16px;
-      padding:12px 14px;
-      border-radius:16px;
+      margin-top:14px;
+      padding:10px 12px;
+      border-radius:14px;
       background:#FFF6F0;
       border:1px solid #F0DACB;
       color:var(--muted);
-      font-size:15px;
-      line-height:1.8;
+      font-size:14px;
+      line-height:1.75;
       font-weight:600;
     }
 
     .muted{
       color:var(--muted);
+      font-size:15px;
     }
 
     .showcase{
       display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:18px;
-      align-items:stretch;
+      grid-template-columns:1.05fr .95fr;
+      gap:16px;
+      align-items:start;
+      margin-top:2px;
     }
 
-    .preview-box{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px 20px;
-      min-height:100%;
+    .preview-main{
+      padding-top:2px;
     }
 
     .preview-frame{
-      margin-top:14px;
-      border:1px solid #EDD8CA;
-      border-radius:20px;
+      margin-top:12px;
+      border:1px solid #E9D8CC;
+      border-radius:16px;
       overflow:hidden;
-      background:#FFF7F2;
+      background:#fff;
     }
 
     .preview-frame iframe{
       width:100%;
-      height:480px;
+      height:430px;
       border:0;
-      background:#fff;
       display:block;
+      background:#fff;
+    }
+
+    .side-info{
+      display:grid;
+      gap:14px;
+    }
+
+    .mini-block{
+      background:#FFF9F5;
+      border:1px solid #EEDCCF;
+      border-radius:16px;
+      padding:16px 14px;
+    }
+
+    .mini-block h3{
+      margin-bottom:10px;
+      font-size:16px;
     }
 
     .contact{
-      padding:16px 0 40px;
+      padding:14px 0 34px;
     }
 
     .contact-card{
       text-align:center;
-      padding:30px 20px;
+      padding:26px 18px;
     }
 
     .copyright{
-      margin-top:20px;
-      padding-top:18px;
+      margin-top:18px;
+      padding-top:16px;
       border-top:1px solid #EAD7CA;
       color:var(--muted);
-      font-size:13px;
-      line-height:1.9;
+      font-size:12px;
+      line-height:1.85;
     }
 
     .copyright strong{
@@ -413,37 +427,36 @@
       .tag{
         position:static;
         display:inline-flex;
-        margin-bottom:12px;
+        margin-bottom:10px;
       }
     }
 
     @media (max-width: 640px){
       .hero{
-        padding:28px 0 14px;
+        padding:24px 0 12px;
       }
 
       .hero-card{
-        padding:24px 18px 22px;
-        border-radius:24px;
+        padding:22px 16px 20px;
+        border-radius:22px;
       }
 
-      .card,
-      .preview-box{
-        padding:20px 16px;
+      .card{
+        padding:18px 15px;
       }
 
       .section-title,
       h2{
-        font-size:20px;
+        font-size:18px;
       }
 
       h3,
       .plan-name{
-        font-size:19px;
+        font-size:17px;
       }
 
       .price strong{
-        font-size:30px;
+        font-size:28px;
       }
 
       .btn{
@@ -451,7 +464,7 @@
       }
 
       .preview-frame iframe{
-        height:380px;
+        height:360px;
       }
     }
   </style>
@@ -569,7 +582,7 @@
           <article class="card">
             <h2 class="section-title" style="margin-top:0;">其他方案</h2>
 
-            <p class="muted" style="margin-bottom:14px;">
+            <p class="muted" style="margin-bottom:12px;">
               如果你店內有不同流程、欄位需求，<br>
               或希望整體視覺更貼近品牌風格，<br>
               也可以另外討論完全客製化版本。
@@ -590,12 +603,12 @@
               <li>無需程式背景也可完成</li>
             </ul>
 
-            <p class="muted" style="margin-top:14px;">
+            <p class="muted" style="margin-top:12px;">
               如果需要，<br>
               我會用語音一步一步帶你設定。
             </p>
 
-            <p style="margin-top:8px; font-weight:700; color:var(--title);">
+            <p style="margin-top:6px; font-weight:700; color:var(--title); font-size:15px;">
               約 1 小時完成
             </p>
           </article>
@@ -636,7 +649,7 @@
           <h2 class="section-title" style="margin-top:0;">實際畫面</h2>
 
           <div class="showcase">
-            <div class="preview-box">
+            <div class="preview-main">
               <h3>
                 契約＋基本資料卡<br>
                 實際畫面
@@ -652,28 +665,26 @@
               </div>
             </div>
 
-            <div class="preview-box">
-              <h3>
-                適合這樣的店家
-              </h3>
+            <div class="side-info">
+              <div class="mini-block">
+                <h3>適合這樣的店家</h3>
+                <ul class="list">
+                  <li>預約制寵物美容工作室</li>
+                  <li>想把紙本流程電子化的店家</li>
+                  <li>想要簡單、不想訂閱月費系統的人</li>
+                  <li>希望表單有品牌感與一致性的店家</li>
+                </ul>
+              </div>
 
-              <ul class="list" style="margin-bottom:20px;">
-                <li>預約制寵物美容工作室</li>
-                <li>想把紙本流程電子化的店家</li>
-                <li>想要簡單、不想訂閱月費系統的人</li>
-                <li>希望表單有品牌感與一致性的店家</li>
-              </ul>
-
-              <h3>
-                你會得到的感受
-              </h3>
-
-              <ul class="list">
-                <li>接待流程更整齊</li>
-                <li>客人閱讀與簽署更方便</li>
-                <li>整體看起來更專業</li>
-                <li>減少紙本保存與整理麻煩</li>
-              </ul>
+              <div class="mini-block">
+                <h3>你會得到的感受</h3>
+                <ul class="list">
+                  <li>接待流程更整齊</li>
+                  <li>客人閱讀與簽署更方便</li>
+                  <li>整體看起來更專業</li>
+                  <li>減少紙本保存與整理麻煩</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -690,14 +701,16 @@
             都可以直接加 LINE 找我聊聊。
           </p>
 
-          <div class="hero-actions" style="justify-content:center; margin-top:20px;">
+          <div class="hero-actions" style="justify-content:center; margin-top:18px;">
             <a class="btn btn-primary" href="https://line.me/ti/p/k8vS9REcTl" target="_blank" rel="noopener noreferrer">加入 LINE 聯絡我</a>
           </div>
 
           <div class="copyright">
             <strong>製作與設計 © Elaine Wan</strong><br>
-            本系統為個人開發之客製化表單與流程設計，<br>包含版面設計、功能邏輯與使用流程。<br>
-            請勿未經授權擅自複製、散布或轉售本系統內容，<br>感謝你尊重創作者的心♥
+            本系統為個人開發之客製化表單與流程設計，<br>
+            包含版面設計、功能邏輯與使用流程。<br>
+            請勿未經授權擅自複製、散布或轉售本系統內容，<br>
+            感謝你尊重創作者的心♥
           </div>
         </div>
       </div>
