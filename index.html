@@ -1,630 +1,213 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>LINE線上契約簽署系統｜寵物美容專屬接待流程</title>
-  <meta name="description" content="LINE線上契約簽署系統，打造你的寵物美容專屬接待流程。免紙本、免訂閱，1小時完成設定，立即使用。" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap');
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LINE線上契約簽署系統</title>
 
-    :root{
-      --bg:#F7F1EA;
-      --card:#FFFDFC;
-      --soft:#F4E5D9;
-      --soft-2:#EFD8C9;
-      --line:#E8D4C6;
-      --text:#5E4A3F;
-      --muted:#8B7568;
-      --title:#9D6A50;
-      --accent:#C98663;
-      --accent-2:#E7B79A;
-      --btn:#B97855;
-      --btn-hover:#A76643;
-      --shadow:0 14px 32px rgba(130, 92, 67, .08);
-      --radius:24px;
-      --radius-sm:18px;
-      --max:1120px;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap');
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
-    body{
-      margin:0;
-      font-family:"Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.75;
-    }
+:root{
+  --bg:#F7F1EA;
+  --card:#FFFDFC;
+  --line:#E8D4C6;
+  --text:#5E4A3F;
+  --muted:#8B7568;
+  --title:#9D6A50;
+  --accent:#C98663;
+  --btn:#B97855;
+  --radius:22px;
+}
 
-    a{ color:inherit; text-decoration:none; }
-    img{ max-width:100%; display:block; }
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Noto Sans TC',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
 
-    .wrap{
-      width:min(var(--max), calc(100% - 28px));
-      margin:0 auto;
-    }
+.wrap{
+  width:min(1000px,90%);
+  margin:auto;
+}
 
-    .hero{
-      padding:56px 0 28px;
-    }
+h1{
+  font-size:30px;
+  line-height:1.4;
+  margin:0 0 12px;
+  color:var(--title);
+}
 
-    .hero-card{
-      background:var(--card);
-      border:1px solid rgba(201,134,99,.18);
-      border-radius:32px;
-      box-shadow:var(--shadow);
-      padding:40px 32px 30px;
-    }
+h2{
+  font-size:22px;
+  margin:24px 0 12px;
+  color:var(--title);
+}
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 14px;
-      background:#FFF4EC;
-      border:1px solid #F0D5C3;
-      border-radius:999px;
-      font-size:14px;
-      font-weight:700;
-      color:var(--title);
-      margin-bottom:18px;
-    }
+p{
+  margin:0 0 12px;
+  font-size:16px;
+}
 
-    h1{
-      margin:0 0 14px;
-      font-size:clamp(28px, 4.2vw, 42px);
-      line-height:1.32;
-      letter-spacing:.2px;
-      color:var(--title);
-      font-weight:800;
-      word-break:keep-all;
-    }
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px;
+  margin-bottom:18px;
+}
 
-    .hero-sub{
-      font-size:clamp(16px, 2vw, 22px);
-      color:var(--text);
-      font-weight:700;
-      margin-bottom:10px;
-      word-break:keep-all;
-    }
+.btn{
+  display:block;
+  text-align:center;
+  padding:14px;
+  background:var(--btn);
+  color:#fff;
+  border-radius:999px;
+  font-weight:700;
+  margin-top:20px;
+}
 
-    .hero-desc{
-      color:var(--muted);
-      font-size:16px;
-      max-width:760px;
-      margin:0;
-      word-break:keep-all;
-    }
+.list{
+  padding-left:18px;
+}
 
-    .hero-actions{
-      margin-top:24px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      min-height:52px;
-      padding:0 22px;
-      border-radius:999px;
-      font-weight:800;
-      font-size:16px;
-      transition:.2s ease;
-      border:1px solid transparent;
-      cursor:pointer;
-      word-break:keep-all;
-    }
-
-    .btn-primary{
-      background:var(--btn);
-      color:#fff;
-      box-shadow:0 8px 18px rgba(185,120,85,.12);
-    }
-    .btn-primary:hover{ background:var(--btn-hover); transform:translateY(-1px); }
-
-    .btn-secondary{
-      background:#FFF7F2;
-      border-color:#ECD2C0;
-      color:var(--title);
-    }
-    .btn-secondary:hover{ background:#FFF1E8; }
-
-    .hero-points{
-      margin-top:28px;
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:12px;
-    }
-
-    .point{
-      background:#FFF8F4;
-      border:1px solid rgba(201,134,99,.14);
-      border-radius:18px;
-      padding:14px 14px 13px;
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:700;
-      word-break:keep-all;
-    }
-
-    section{
-      padding:18px 0 24px;
-    }
-
-    .section-title{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin:0 0 18px;
-      font-size:24px;
-      color:var(--title);
-      font-weight:800;
-      word-break:keep-all;
-    }
-
-    .section-title::before{
-      content:"";
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--accent);
-      flex:0 0 auto;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:18px;
-    }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:26px 22px;
-    }
-
-    .plan{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .plan.recommend{
-      border:1.5px solid rgba(185,120,85,.35);
-    }
-
-    .tag{
-      position:absolute;
-      top:18px;
-      right:18px;
-      background:#FFF2E8;
-      color:var(--title);
-      border:1px solid #F0D4C1;
-      padding:7px 12px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:800;
-      word-break:keep-all;
-    }
-
-    .plan-name{
-      font-size:25px;
-      line-height:1.38;
-      font-weight:800;
-      color:var(--title);
-      margin:0 0 6px;
-      padding-right:86px;
-      word-break:keep-all;
-    }
-
-    .plan-desc{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:15px;
-      word-break:keep-all;
-    }
-
-    .price{
-      display:flex;
-      align-items:flex-end;
-      gap:8px;
-      margin:0 0 18px;
-    }
-
-    .price strong{
-      font-size:38px;
-      line-height:1;
-      color:var(--accent);
-      font-weight:800;
-      word-break:keep-all;
-    }
-
-    .price span{
-      color:var(--muted);
-      font-size:14px;
-      font-weight:700;
-      padding-bottom:4px;
-      word-break:keep-all;
-    }
-
-    .feature-list{
-      list-style:none;
-      padding:0;
-      margin:0 0 22px;
-      display:grid;
-      gap:10px;
-    }
-
-    .feature-list li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      color:var(--text);
-      font-weight:600;
-      word-break:keep-all;
-    }
-
-    .feature-list li::before{
-      content:"✔";
-      color:var(--accent);
-      font-weight:800;
-      flex:0 0 auto;
-      margin-top:1px;
-    }
-
-    .plan-note{
-      margin-top:8px;
-      padding:12px 14px;
-      border-radius:16px;
-      background:#FFF6F0;
-      border:1px solid #F0DACB;
-      color:var(--muted);
-      font-size:14px;
-      font-weight:600;
-      word-break:keep-all;
-    }
-
-    .soft-card{
-      background:#FFF9F6;
-      border:1px solid #EFDCCF;
-    }
-
-    .muted{
-      color:var(--muted);
-      word-break:keep-all;
-    }
-
-    .list{
-      list-style:none;
-      padding:0;
-      margin:0;
-      display:grid;
-      gap:12px;
-    }
-
-    .list li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      font-weight:600;
-      word-break:keep-all;
-    }
-
-    .list li::before{
-      content:"✔";
-      color:var(--accent);
-      font-weight:800;
-      flex:0 0 auto;
-      margin-top:1px;
-    }
-
-    .showcase{
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      gap:18px;
-      align-items:stretch;
-    }
-
-    .preview-box{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:22px;
-      min-height:100%;
-    }
-
-    .preview-frame{
-      border:1px solid #EDD8CA;
-      border-radius:20px;
-      overflow:hidden;
-      background:#FFF7F2;
-      min-height:320px;
-    }
-
-    .preview-frame iframe{
-      width:100%;
-      height:480px;
-      border:0;
-      background:#fff;
-    }
-
-    .mini-title{
-      margin:0 0 10px;
-      font-size:20px;
-      font-weight:800;
-      color:var(--title);
-      word-break:keep-all;
-    }
-
-    .contact{
-      padding:18px 0 36px;
-    }
-
-    .contact-card{
-      text-align:center;
-      padding:34px 22px;
-    }
-
-    .contact-card p{
-      margin:0;
-      word-break:keep-all;
-    }
-
-    .copyright{
-      margin-top:18px;
-      padding-top:18px;
-      border-top:1px solid #EAD7CA;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.9;
-      word-break:keep-all;
-    }
-
-    .copyright strong{
-      color:var(--title);
-      font-weight:800;
-    }
-
-    @media (max-width: 960px){
-      .hero-points,
-      .grid-2,
-      .showcase{
-        grid-template-columns:1fr;
-      }
-      .plan-name{ padding-right:0; }
-      .tag{
-        position:static;
-        display:inline-flex;
-        margin-bottom:12px;
-      }
-    }
-
-    @media (max-width: 640px){
-      .hero{
-        padding:36px 0 18px;
-      }
-      .hero-card{
-        padding:26px 18px 22px;
-        border-radius:26px;
-      }
-      .card, .preview-box{
-        padding:20px 16px;
-      }
-      .section-title{
-        font-size:21px;
-      }
-      .price strong{
-        font-size:34px;
-      }
-      .btn{
-        width:100%;
-      }
-      .preview-frame iframe{
-        height:380px;
-      }
-      .hero-points{
-        gap:10px;
-      }
-      .point{
-        padding:12px 10px;
-      }
-    }
-  </style>
+.list li{
+  margin-bottom:8px;
+}
+</style>
 </head>
+
 <body>
 
-  <header class="hero">
-    <div class="wrap">
-      <div class="hero-card">
-        <div class="badge">寵物美容專屬接待流程</div>
-        <h1>LINE線上契約簽署系統<br>打造你的寵物美容專屬接待流程！</h1>
-        <div class="hero-sub">免紙本・免訂閱<br>1小時完成設定，立即使用</div>
-        <p class="hero-desc">
-          適合預約制工作室與想把契約、資料流程電子化的店家，簡單、直覺、有品牌感，不需要另外訂閱系統也能開始使用。
-        </p>
+<div class="wrap">
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://line.me/ti/p/k8vS9REcTl" target="_blank" rel="noopener noreferrer">直接聯絡我</a>
-          <a class="btn btn-secondary" href="#plans">查看方案</a>
-        </div>
+<!-- 主標 -->
+<div class="card">
+<h1>
+LINE線上契約簽署系統<br>
+打造你的寵物美容<br>
+專屬接待流程
+</h1>
 
-        <div class="hero-points">
-          <div class="point">LINE直接開啟</div>
-          <div class="point">線上契約簽署</div>
-          <div class="point">PDF自動寄送</div>
-          <div class="point">品牌感客製化</div>
-        </div>
-      </div>
-    </div>
-  </header>
+<p>
+免紙本・免訂閱<br>
+1小時完成設定，立即使用
+</p>
 
-  <main>
-    <section id="plans">
-      <div class="wrap">
-        <h2 class="section-title">主打方案</h2>
+<a class="btn" href="https://line.me/ti/p/k8vS9REcTl" target="_blank">
+直接聯絡我
+</a>
 
-        <div class="grid-2">
-          <article class="card plan">
-            <h3 class="plan-name">電子契約系統<br>基本版</h3>
-            <p class="plan-desc">適合想先把契約流程電子化的店家。</p>
-            <div class="price">
-              <strong>$3000</strong>
-              <span>一次買斷</span>
-            </div>
+<ul class="list" style="margin-top:16px;">
+<li>LINE直接開啟</li>
+<li>線上契約簽署</li>
+<li>PDF自動寄送</li>
+<li>品牌感客製化</li>
+</ul>
+</div>
 
-            <ul class="feature-list">
-              <li>LINE開啟＋線上簽名</li>
-              <li>PDF自動寄送（客人＋店家）</li>
-              <li>表單顏色＋Logo設定</li>
-            </ul>
+<!-- 主打方案 -->
+<div class="card">
+<h2>主打方案</h2>
 
-            <div class="plan-note">
-              這個版本主打契約簽署流程簡化，讓接待更一致、更有質感。
-            </div>
-          </article>
+<p><strong>電子契約系統 基本版 $3000</strong></p>
 
-          <article class="card plan recommend">
-            <div class="tag">推薦方案</div>
-            <h3 class="plan-name">電子契約系統＋<br>基本資料版</h3>
-            <p class="plan-desc">適合想一次整合契約與基本資料填寫的店家。</p>
-            <div class="price">
-              <strong>$5000</strong>
-              <span>一次買斷</span>
-            </div>
+<ul class="list">
+<li>LINE開啟＋線上簽名</li>
+<li>PDF自動寄送（客人＋店家）</li>
+<li>表單顏色＋Logo設定</li>
+</ul>
 
-            <ul class="feature-list">
-              <li>LINE開啟＋線上簽名</li>
-              <li>PDF自動寄送（客人＋店家）</li>
-              <li>基本資料填寫</li>
-              <li>表單顏色＋Logo設定</li>
-            </ul>
+<p style="margin-top:16px;"><strong>電子契約系統＋基本資料版 $5000</strong></p>
 
-            <div class="plan-note">
-              大部分店家如果想更完整使用，會比較適合這個版本。
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+<ul class="list">
+<li>LINE開啟＋線上簽名</li>
+<li>PDF自動寄送（客人＋店家）</li>
+<li>基本資料填寫</li>
+<li>表單顏色＋Logo設定</li>
+</ul>
+</div>
 
-    <section>
-      <div class="wrap">
-        <div class="grid-2">
-          <article class="card soft-card">
-            <h2 class="section-title" style="margin-top:0;">其他方案</h2>
-            <p class="muted" style="margin:0 0 12px;">
-              如果你店內有不同流程、欄位需求，或希望整體視覺更貼近品牌風格，也可以另外討論完全客製化版本。
-            </p>
-            <ul class="list">
-              <li>依店內需求調整欄位內容</li>
-              <li>依品牌風格調整版面視覺</li>
-              <li>依使用習慣客製化流程</li>
-            </ul>
-          </article>
+<!-- 客製 -->
+<div class="card">
+<h2>其他方案</h2>
 
-          <article class="card">
-            <h2 class="section-title" style="margin-top:0;">操作方式</h2>
-            <ul class="list">
-              <li>提供完整步驟圖</li>
-              <li>無需程式背景也可完成</li>
-            </ul>
-            <p class="muted" style="margin:14px 0 0;">
-              如果需要，我會用語音一步一步帶你設定。
-            </p>
-            <p style="margin:8px 0 0; font-weight:800; color:var(--title); word-break:keep-all;">
-              約 1 小時完成
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+<p>
+針對不同店內需求<br>
+可以做完全客製化表單
+</p>
+</div>
 
-    <section>
-      <div class="wrap">
-        <div class="card">
-          <h2 class="section-title" style="margin-top:0;">資料與使用方式</h2>
-          <div class="grid-2">
-            <div>
-              <ul class="list">
-                <li>使用你自己的Google帳號設定</li>
-                <li>資料留在你自己這邊</li>
-                <li>不經第三方平台代管</li>
-              </ul>
-            </div>
-            <div>
-              <p class="muted" style="margin:0;">
-                使用上更安心，也更有掌控權。你是自己登入自己的帳號操作，不是交給我代管，整體流程會更單純，也比較適合想自己掌握資料的店家。
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- 操作 -->
+<div class="card">
+<h2>操作方式</h2>
 
-    <section>
-      <div class="wrap">
-        <h2 class="section-title">實際畫面</h2>
-        <div class="showcase">
-          <div class="preview-box">
-            <h3 class="mini-title">契約＋基本資料卡實際畫面</h3>
-            <p class="muted" style="margin:0 0 14px;">
-              下方為目前實際展示頁面，可先看看整體風格與使用感。
-            </p>
-            <div class="preview-frame">
-              <iframe src="https://kumajima2025-cpu.github.io/Test/" title="契約＋基本資料卡實際畫面"></iframe>
-            </div>
-          </div>
+<ul class="list">
+<li>提供完整步驟圖</li>
+<li>無需程式背景也可完成</li>
+</ul>
 
-          <div class="preview-box">
-            <h3 class="mini-title">適合這樣的店家</h3>
-            <ul class="list" style="margin-bottom:18px;">
-              <li>預約制寵物美容工作室</li>
-              <li>想把紙本流程電子化的店家</li>
-              <li>想要簡單、不想訂閱月費系統的人</li>
-              <li>希望表單有品牌感與一致性的店家</li>
-            </ul>
+<p>
+需要的話我會用語音<br>
+一步一步帶你設定<br>
+約1小時完成
+</p>
+</div>
 
-            <h3 class="mini-title">你會得到的感受</h3>
-            <ul class="list">
-              <li>接待流程更整齊</li>
-              <li>客人閱讀與簽署更方便</li>
-              <li>整體看起來更專業</li>
-              <li>減少紙本保存與整理麻煩</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- 資料 -->
+<div class="card">
+<h2>資料與使用方式</h2>
 
-    <section class="contact">
-      <div class="wrap">
-        <div class="card contact-card">
-          <h2 class="section-title" style="justify-content:center;">直接聯絡我</h2>
-          <p class="muted">
-            有興趣想了解、想看適不適合你店裡使用，都可以直接加 LINE 找我聊聊。
-          </p>
+<ul class="list">
+<li>使用你自己的Google帳號設定</li>
+<li>資料留在你自己這邊</li>
+<li>不經第三方平台代管</li>
+</ul>
 
-          <div class="hero-actions" style="justify-content:center; margin-top:20px;">
-            <a class="btn btn-primary" href="https://line.me/ti/p/k8vS9REcTl" target="_blank" rel="noopener noreferrer">加入 LINE 聯絡我</a>
-          </div>
+<p>
+使用上更安心<br>
+也更有掌控權
+</p>
+</div>
 
-          <div class="copyright">
-            <strong>製作與設計 © Elaine Wan</strong><br>
-            本系統為個人開發之客製化表單與流程設計，包含版面設計、功能邏輯與使用流程。<br>
-            請勿未經授權擅自複製、散布或轉售本系統內容，感謝你尊重創作者的心♥
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+<!-- 畫面 -->
+<div class="card">
+<h2>實際畫面</h2>
+
+<p>
+契約＋基本資料卡實際畫面
+</p>
+
+<a class="btn" href="https://kumajima2025-cpu.github.io/Test/" target="_blank">
+查看展示頁
+</a>
+</div>
+
+<!-- 聯絡 -->
+<div class="card">
+<h2>直接聯絡我</h2>
+
+<p>
+有興趣或想了解<br>
+可以直接加LINE找我
+</p>
+
+<a class="btn" href="https://line.me/ti/p/k8vS9REcTl" target="_blank">
+加入LINE聯絡我
+</a>
+
+<p style="margin-top:16px;font-size:13px;color:#8B7568;">
+製作與設計 © Elaine Wan<br>
+本系統為個人開發之客製化表單與流程設計<br>
+請勿未經授權擅自複製、散布或轉售
+</p>
+</div>
+
+</div>
 
 </body>
 </html>
