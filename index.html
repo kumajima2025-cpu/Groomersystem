@@ -12,7 +12,6 @@
     :root{
       --bg:#F7F1EA;
       --card:#FFFDFC;
-      --card-soft:#FFF8F4;
       --line:#E8D4C6;
       --text:#5E4A3F;
       --muted:#8B7568;
@@ -162,8 +161,24 @@
       background:#FFF1E8;
     }
 
+    .intro-block{
+      margin-top:24px;
+      padding:16px 18px;
+      background:#FFF8F4;
+      border:1px solid #EFD9CB;
+      border-radius:18px;
+    }
+
+    .intro-title{
+      margin:0 0 10px;
+      color:var(--title);
+      font-size:16px;
+      line-height:1.6;
+      font-weight:800;
+    }
+
     .intro-list{
-      margin:22px 0 0;
+      margin:0;
       padding:0;
       list-style:none;
       display:grid;
@@ -225,10 +240,6 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:24px 20px;
-    }
-
-    .soft-card{
-      background:var(--card-soft);
     }
 
     .plan{
@@ -473,12 +484,15 @@
           <a class="btn btn-secondary" href="#plans">查看方案</a>
         </div>
 
-        <ul class="intro-list">
-          <li>LINE直接開啟</li>
-          <li>線上契約簽署</li>
-          <li>PDF自動寄送</li>
-          <li>品牌感客製化</li>
-        </ul>
+        <div class="intro-block">
+          <div class="intro-title">系統特色</div>
+          <ul class="intro-list">
+            <li>LINE直接開啟</li>
+            <li>線上契約簽署</li>
+            <li>PDF自動寄送</li>
+            <li>品牌感客製化</li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -541,7 +555,7 @@
             </ul>
 
             <div class="plan-note">
-              大部分店家如果想更完整使用，<br>
+              如果想更完整使用，<br>
               會比較適合這個版本。
             </div>
           </article>
@@ -552,7 +566,7 @@
     <section>
       <div class="wrap">
         <div class="grid-2">
-          <article class="card soft-card">
+          <article class="card">
             <h2 class="section-title" style="margin-top:0;">其他方案</h2>
 
             <p class="muted" style="margin-bottom:14px;">
@@ -618,47 +632,49 @@
 
     <section>
       <div class="wrap">
-        <h2 class="section-title">實際畫面</h2>
+        <div class="card">
+          <h2 class="section-title" style="margin-top:0;">實際畫面</h2>
 
-        <div class="showcase">
-          <div class="preview-box">
-            <h3>
-              契約＋基本資料卡<br>
-              實際畫面
-            </h3>
+          <div class="showcase">
+            <div class="preview-box">
+              <h3>
+                契約＋基本資料卡<br>
+                實際畫面
+              </h3>
 
-            <p class="muted">
-              下方為目前實際展示頁面，<br>
-              可先看看整體風格與使用感。
-            </p>
+              <p class="muted">
+                下方為目前實際展示頁面，<br>
+                可先看看整體風格與使用感。
+              </p>
 
-            <div class="preview-frame">
-              <iframe src="https://kumajima2025-cpu.github.io/Test/" title="契約＋基本資料卡實際畫面"></iframe>
+              <div class="preview-frame">
+                <iframe src="https://kumajima2025-cpu.github.io/Test/" title="契約＋基本資料卡實際畫面"></iframe>
+              </div>
             </div>
-          </div>
 
-          <div class="preview-box">
-            <h3>
-              適合這樣的店家
-            </h3>
+            <div class="preview-box">
+              <h3>
+                適合這樣的店家
+              </h3>
 
-            <ul class="list" style="margin-bottom:20px;">
-              <li>預約制寵物美容工作室</li>
-              <li>想把紙本流程電子化的店家</li>
-              <li>想要簡單、不想訂閱月費系統的人</li>
-              <li>希望表單有品牌感與一致性的店家</li>
-            </ul>
+              <ul class="list" style="margin-bottom:20px;">
+                <li>預約制寵物美容工作室</li>
+                <li>想把紙本流程電子化的店家</li>
+                <li>想要簡單、不想訂閱月費系統的人</li>
+                <li>希望表單有品牌感與一致性的店家</li>
+              </ul>
 
-            <h3>
-              你會得到的感受
-            </h3>
+              <h3>
+                你會得到的感受
+              </h3>
 
-            <ul class="list">
-              <li>接待流程更整齊</li>
-              <li>客人閱讀與簽署更方便</li>
-              <li>整體看起來更專業</li>
-              <li>減少紙本保存與整理麻煩</li>
-            </ul>
+              <ul class="list">
+                <li>接待流程更整齊</li>
+                <li>客人閱讀與簽署更方便</li>
+                <li>整體看起來更專業</li>
+                <li>減少紙本保存與整理麻煩</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -680,8 +696,8 @@
 
           <div class="copyright">
             <strong>製作與設計 © Elaine Wan</strong><br>
-            本系統為個人開發之客製化表單與流程設計，包含版面設計、功能邏輯與使用流程。<br>
-            請勿未經授權擅自複製、散布或轉售本系統內容，感謝你尊重創作者的心♥
+            本系統為個人開發之客製化表單與流程設計，<br>包含版面設計、功能邏輯與使用流程。<br>
+            請勿未經授權擅自複製、散布或轉售本系統內容，<br>感謝你尊重創作者的心♥
           </div>
         </div>
       </div>
