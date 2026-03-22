@@ -11,17 +11,17 @@
     :root{
       --bg:#F7F1EA;
       --card:#FFFDFC;
-      --soft:#F3E5D8;
+      --soft:#F4E5D9;
       --soft-2:#EFD8C9;
       --line:#E8D4C6;
       --text:#5E4A3F;
       --muted:#8B7568;
-      --title:#A56F52;
+      --title:#9D6A50;
       --accent:#C98663;
-      --accent-2:#E8B89C;
+      --accent-2:#E7B79A;
       --btn:#B97855;
       --btn-hover:#A76643;
-      --shadow:0 18px 40px rgba(130, 92, 67, .10);
+      --shadow:0 14px 32px rgba(130, 92, 67, .08);
       --radius:24px;
       --radius-sm:18px;
       --max:1120px;
@@ -32,9 +32,7 @@
     body{
       margin:0;
       font-family:"Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,.7), transparent 28%),
-        linear-gradient(180deg, #F9F3EE 0%, #F7F1EA 45%, #F3E7DD 100%);
+      background:var(--bg);
       color:var(--text);
       line-height:1.75;
     }
@@ -48,27 +46,15 @@
     }
 
     .hero{
-      padding:72px 0 34px;
+      padding:56px 0 28px;
     }
 
     .hero-card{
-      background:linear-gradient(180deg, rgba(255,253,252,.96), rgba(255,250,247,.92));
+      background:var(--card);
       border:1px solid rgba(201,134,99,.18);
       border-radius:32px;
       box-shadow:var(--shadow);
-      padding:48px 34px 34px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-card::before{
-      content:"";
-      position:absolute;
-      inset:-100px -60px auto auto;
-      width:240px;
-      height:240px;
-      background:radial-gradient(circle, rgba(232,184,156,.34) 0%, rgba(232,184,156,0) 72%);
-      pointer-events:none;
+      padding:40px 32px 30px;
     }
 
     .badge{
@@ -86,30 +72,33 @@
     }
 
     h1{
-      margin:0 0 12px;
-      font-size:clamp(32px, 5vw, 54px);
-      line-height:1.22;
-      letter-spacing:.5px;
+      margin:0 0 14px;
+      font-size:clamp(28px, 4.2vw, 42px);
+      line-height:1.32;
+      letter-spacing:.2px;
       color:var(--title);
       font-weight:800;
+      word-break:keep-all;
     }
 
     .hero-sub{
-      font-size:clamp(17px, 2.2vw, 23px);
+      font-size:clamp(16px, 2vw, 22px);
       color:var(--text);
       font-weight:700;
       margin-bottom:10px;
+      word-break:keep-all;
     }
 
     .hero-desc{
       color:var(--muted);
       font-size:16px;
-      max-width:720px;
+      max-width:760px;
       margin:0;
+      word-break:keep-all;
     }
 
     .hero-actions{
-      margin-top:26px;
+      margin-top:24px;
       display:flex;
       flex-wrap:wrap;
       gap:12px;
@@ -128,12 +117,13 @@
       transition:.2s ease;
       border:1px solid transparent;
       cursor:pointer;
+      word-break:keep-all;
     }
 
     .btn-primary{
       background:var(--btn);
       color:#fff;
-      box-shadow:0 10px 22px rgba(185,120,85,.18);
+      box-shadow:0 8px 18px rgba(185,120,85,.12);
     }
     .btn-primary:hover{ background:var(--btn-hover); transform:translateY(-1px); }
 
@@ -152,7 +142,7 @@
     }
 
     .point{
-      background:rgba(255,255,255,.66);
+      background:#FFF8F4;
       border:1px solid rgba(201,134,99,.14);
       border-radius:18px;
       padding:14px 14px 13px;
@@ -160,10 +150,11 @@
       color:var(--muted);
       font-size:14px;
       font-weight:700;
+      word-break:keep-all;
     }
 
     section{
-      padding:18px 0 26px;
+      padding:18px 0 24px;
     }
 
     .section-title{
@@ -174,6 +165,7 @@
       font-size:24px;
       color:var(--title);
       font-weight:800;
+      word-break:keep-all;
     }
 
     .section-title::before{
@@ -192,7 +184,7 @@
     }
 
     .card{
-      background:rgba(255,253,252,.92);
+      background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
@@ -206,7 +198,6 @@
 
     .plan.recommend{
       border:1.5px solid rgba(185,120,85,.35);
-      box-shadow:0 18px 42px rgba(153,106,79,.13);
     }
 
     .tag{
@@ -220,21 +211,24 @@
       border-radius:999px;
       font-size:13px;
       font-weight:800;
+      word-break:keep-all;
     }
 
     .plan-name{
-      font-size:26px;
-      line-height:1.3;
+      font-size:25px;
+      line-height:1.38;
       font-weight:800;
       color:var(--title);
       margin:0 0 6px;
-      padding-right:80px;
+      padding-right:86px;
+      word-break:keep-all;
     }
 
     .plan-desc{
       margin:0 0 16px;
       color:var(--muted);
       font-size:15px;
+      word-break:keep-all;
     }
 
     .price{
@@ -245,10 +239,11 @@
     }
 
     .price strong{
-      font-size:40px;
+      font-size:38px;
       line-height:1;
       color:var(--accent);
       font-weight:800;
+      word-break:keep-all;
     }
 
     .price span{
@@ -256,6 +251,7 @@
       font-size:14px;
       font-weight:700;
       padding-bottom:4px;
+      word-break:keep-all;
     }
 
     .feature-list{
@@ -272,6 +268,7 @@
       align-items:flex-start;
       color:var(--text);
       font-weight:600;
+      word-break:keep-all;
     }
 
     .feature-list li::before{
@@ -291,15 +288,17 @@
       color:var(--muted);
       font-size:14px;
       font-weight:600;
+      word-break:keep-all;
     }
 
     .soft-card{
-      background:linear-gradient(180deg, #FFF9F6, #FFFDFC);
+      background:#FFF9F6;
       border:1px solid #EFDCCF;
     }
 
     .muted{
       color:var(--muted);
+      word-break:keep-all;
     }
 
     .list{
@@ -315,6 +314,7 @@
       gap:10px;
       align-items:flex-start;
       font-weight:600;
+      word-break:keep-all;
     }
 
     .list li::before{
@@ -333,7 +333,7 @@
     }
 
     .preview-box{
-      background:rgba(255,253,252,.92);
+      background:var(--card);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
@@ -361,10 +361,11 @@
       font-size:20px;
       font-weight:800;
       color:var(--title);
+      word-break:keep-all;
     }
 
     .contact{
-      padding:18px 0 72px;
+      padding:18px 0 36px;
     }
 
     .contact-card{
@@ -374,21 +375,22 @@
 
     .contact-card p{
       margin:0;
+      word-break:keep-all;
     }
 
-    .line-id{
-      display:inline-block;
-      margin-top:10px;
-      font-size:22px;
-      font-weight:800;
-      color:var(--accent);
-      word-break:break-all;
-    }
-
-    .footer-note{
-      margin-top:16px;
+    .copyright{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid #EAD7CA;
       color:var(--muted);
-      font-size:14px;
+      font-size:13px;
+      line-height:1.9;
+      word-break:keep-all;
+    }
+
+    .copyright strong{
+      color:var(--title);
+      font-weight:800;
     }
 
     @media (max-width: 960px){
@@ -407,10 +409,10 @@
 
     @media (max-width: 640px){
       .hero{
-        padding:46px 0 22px;
+        padding:36px 0 18px;
       }
       .hero-card{
-        padding:30px 18px 22px;
+        padding:26px 18px 22px;
         border-radius:26px;
       }
       .card, .preview-box{
@@ -428,6 +430,12 @@
       .preview-frame iframe{
         height:380px;
       }
+      .hero-points{
+        gap:10px;
+      }
+      .point{
+        padding:12px 10px;
+      }
     }
   </style>
 </head>
@@ -440,12 +448,11 @@
         <h1>LINE線上契約簽署系統<br>打造你的寵物美容專屬接待流程！</h1>
         <div class="hero-sub">免紙本・免訂閱<br>1小時完成設定，立即使用</div>
         <p class="hero-desc">
-          適合預約制工作室與想把契約、資料流程電子化的店家。
-          簡單、直覺、有品牌感，不需要另外訂閱系統也能開始使用。
+          適合預約制工作室與想把契約、資料流程電子化的店家，簡單、直覺、有品牌感，不需要另外訂閱系統也能開始使用。
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://line.me/R/ti/p/@YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">直接聯絡我</a>
+          <a class="btn btn-primary" href="https://line.me/ti/p/k8vS9REcTl" target="_blank" rel="noopener noreferrer">直接聯絡我</a>
           <a class="btn btn-secondary" href="#plans">查看方案</a>
         </div>
 
@@ -514,8 +521,7 @@
           <article class="card soft-card">
             <h2 class="section-title" style="margin-top:0;">其他方案</h2>
             <p class="muted" style="margin:0 0 12px;">
-              如果你店內有不同流程、欄位需求，或希望整體視覺更貼近品牌風格，
-              也可以另外討論完全客製化版本。
+              如果你店內有不同流程、欄位需求，或希望整體視覺更貼近品牌風格，也可以另外討論完全客製化版本。
             </p>
             <ul class="list">
               <li>依店內需求調整欄位內容</li>
@@ -531,9 +537,9 @@
               <li>無需程式背景也可完成</li>
             </ul>
             <p class="muted" style="margin:14px 0 0;">
-              如果不想自己研究，我會用語音一步一步帶你設定。
+              如果需要，我會用語音一步一步帶你設定。
             </p>
-            <p style="margin:8px 0 0; font-weight:800; color:var(--title);">
+            <p style="margin:8px 0 0; font-weight:800; color:var(--title); word-break:keep-all;">
               約 1 小時完成
             </p>
           </article>
@@ -555,9 +561,7 @@
             </div>
             <div>
               <p class="muted" style="margin:0;">
-                使用上更安心，也更有掌控權。  
-                你是自己登入自己的帳號操作，不是交給我代管，
-                整體流程會更單純，也比較適合想自己掌握資料的店家。
+                使用上更安心，也更有掌控權。你是自己登入自己的帳號操作，不是交給我代管，整體流程會更單純，也比較適合想自己掌握資料的店家。
               </p>
             </div>
           </div>
@@ -605,17 +609,17 @@
         <div class="card contact-card">
           <h2 class="section-title" style="justify-content:center;">直接聯絡我</h2>
           <p class="muted">
-            有興趣想了解、想看適不適合你店裡使用，<br>
-            都可以直接加 LINE 找我聊聊。
+            有興趣想了解、想看適不適合你店裡使用，都可以直接加 LINE 找我聊聊。
           </p>
 
           <div class="hero-actions" style="justify-content:center; margin-top:20px;">
-            <a class="btn btn-primary" href="https://line.me/R/ti/p/@YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">加入 LINE 聯絡我</a>
+            <a class="btn btn-primary" href="https://line.me/ti/p/k8vS9REcTl" target="_blank" rel="noopener noreferrer">加入 LINE 聯絡我</a>
           </div>
 
-          <div class="line-id">@YOUR_LINE_ID</div>
-          <div class="footer-note">
-            平常如果正在洗狗剪狗，回覆比較慢一點，請稍等我一下🥹
+          <div class="copyright">
+            <strong>製作與設計 © Elaine Wan</strong><br>
+            本系統為個人開發之客製化表單與流程設計，包含版面設計、功能邏輯與使用流程。<br>
+            請勿未經授權擅自複製、散布或轉售本系統內容，感謝你尊重創作者的心♥
           </div>
         </div>
       </div>
